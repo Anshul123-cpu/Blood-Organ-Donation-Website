@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Blood & Organ Donation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Blood & Organ Donation</h1>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul>
+                <li onclick="logout()">Logout</li>
+                <li onclick="window.location.href='dashboard.html'">Home</li>
+                <li onclick="window.location.href='blood-donation.html'">Blood Donation</li>
+                <li onclick="window.location.href='organ-donation.html'">Organ Donation</li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-welcome">
+                <h2>Welcome to Your Dashboard</h2>
+                <p id="userGreeting"></p>
+            </div>
+
+            <div class="user-info-card">
+                <h3>Your Registered Information</h3>
+                <div class="info-display">
+                    <p><strong>Name:</strong> <span id="displayName"></span></p>
+                    <p><strong>Age:</strong> <span id="displayAge"></span></p>
+                    <p><strong>Gender:</strong> <span id="displayGender"></span></p>
+                    <p><strong>Address:</strong> <span id="displayAddress"></span></p>
+                    <p><strong>Mobile:</strong> <span id="displayMobile"></span></p>
+                    <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+                </div>
+                <button class="btn btn-secondary" onclick="window.location.href='index.html'">Update Info</button>
+            </div>
+
+            <div class="donation-options">
+                <h2>Choose Your Donation Type</h2>
+                
+                <div class="option-card">
+                    <div class="card-header blood-donation-card">
+                        <h3>Blood Donation</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Help save lives by donating blood. Your contribution can help multiple patients in need.</p>
+                        <ul class="requirements">
+                            <li>Blood Group</li>
+                            <li>Medical History</li>
+                            <li>Donor Consent</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="window.location.href='blood-donation.html'">Register for Blood Donation</button>
+                    </div>
+                </div>
+
+                <div class="option-card">
+                    <div class="card-header organ-donation-card">
+                        <h3>Organ Donation</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Make a life-changing impact by registering as an organ donor. You can save up to 7 lives.</p>
+                        <ul class="requirements">
+                            <li>Blood Group</li>
+                            <li>Medical History</li>
+                            <li>Organ Selection</li>
+                            <li>Donor Consent</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="window.location.href='organ-donation.html'">Register for Organ Donation</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="donation-stats">
+                <h2>Donation Statistics</h2>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <h4>Active Donors</h4>
+                        <p class="stat-number">1,250+</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Lives Saved</h4>
+                        <p class="stat-number">3,750+</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Organs Donated</h4>
+                        <p class="stat-number">450+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Blood & Organ Donation System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Blood & Organ Donation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Blood & Organ Donation</h1>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul>
+                <li onclick="window.location.href='index.html'" style="font-weight: bold;">Home</li>
+                <li onclick="window.location.href='about-us.html'">About Us</li>
+                <li onclick="scrollToSection('blood-donation-section')" class="donation-btn">Blood Donation</li>
+                <li onclick="scrollToSection('organ-donation-section')" class="donation-btn">Organ Donation</li>
+                <li onclick="scrollToSection('hospital-registration-section')" class="donation-btn">Hospital Registration</li>
+                <li onclick="scrollToSection('nearby-hospitals-section')" class="donation-btn">Nearby Hospitals</li>
+                <li onclick="window.location.href='registration.html'" class="register-btn">Register Now!</li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-box">
+            <h2>Donate Blood, Save Lives</h2>
+            <p>
+                Your blood and organ donation can help save multiple lives.
+                Register today as a blood or organ donor and make a difference in someone's life.
+            </p>
+            <button class="btn btn-primary" onclick="window.location.href='registration.html'">Register Now!</button>
+            <button class="btn btn-secondary" onclick="window.location.href='about-us.html'">Learn More</button>
+        </div>
+    </section>
+
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="dashboard-welcome">
+                <h2>Welcome to Our Donation Portal</h2>
+                <p>Help save lives by becoming a blood or organ donor today</p>
+            </div>
+
+            <div class="donation-options">
+                <h2>Choose Your Way to Help</h2>
+                
+                <div class="option-card" id="blood-donation-section">
+                    <div class="card-header blood-donation-card">
+                        <h3>Blood Donation</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Help save lives by donating blood. Your contribution can help multiple patients in need.</p>
+                        <ul class="requirements">
+                            <li>Blood Group</li>
+                            <li>Medical History</li>
+                            <li>Donor Consent</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="checkUserAndNavigate('blood-donation.html')">Register for Blood Donation</button>
+                    </div>
+                </div>
+
+                <div class="option-card" id="organ-donation-section">
+                    <div class="card-header organ-donation-card">
+                        <h3>Organ Donation</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Make a life-changing impact by registering as an organ donor. You can save up to 7 lives.</p>
+                        <ul class="requirements">
+                            <li>Blood Group</li>
+                            <li>Medical History</li>
+                            <li>Organ Selection</li>
+                            <li>Donor Consent</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="checkUserAndNavigate('organ-donation.html')">Register for Organ Donation</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="donation-stats">
+                <h2>Donation Statistics</h2>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <h4>Active Donors</h4>
+                        <p class="stat-number">1,250+</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Lives Saved</h4>
+                        <p class="stat-number">3,750+</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Organs Donated</h4>
+                        <p class="stat-number">450+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hospital-registration-section" id="hospital-registration-section">
+        <div class="container">
+            <div class="form-box">
+                <h2>Register Your Hospital</h2>
+                <p class="form-subtitle">Join our network of healthcare providers to help save lives</p>
+                
+                <form id="hospitalRegistrationForm" class="hospital-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="hospitalName">Hospital Name *</label>
+                            <input type="text" id="hospitalName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fullAddress">Full Address *</label>
+                        <textarea id="fullAddress" name="address" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">Pincode *</label>
+                            <input type="number" id="pincode" name="pincode" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactNumber">Contact Number *</label>
+                            <input type="tel" id="contactNumber" name="contact" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Services Available *</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="services[]" value="bloodBank"> Blood Bank
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="services[]" value="organTransplant"> Organ Transplant
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="services[]" value="emergencyServices"> Emergency Services
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary hospital-register-btn">Register Hospital</button>
+                    </div>
+                    
+                    <div class="info-text">
+                        <p><em>This information will be used to help users find nearby hospitals.</em></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="nearby-hospitals-section" id="nearby-hospitals-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Select Nearby Hospital</h2>
+                <p class="section-subtitle">Choose a hospital near you for your donation needs</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="hospital-filters">
+                <div class="filter-group">
+                    <label for="cityFilter">Filter by City:</label>
+                    <select id="cityFilter" class="filter-select">
+                        <option value="all">All Cities</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Chennai">Chennai</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="serviceFilter">Filter by Service:</label>
+                    <select id="serviceFilter" class="filter-select">
+                        <option value="all">All Services</option>
+                        <option value="blood">Blood Bank</option>
+                        <option value="organ">Organ Transplant</option>
+                        <option value="emergency">Emergency Services</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="hospitals-grid" id="hospitalsGrid">
+                <!-- Hospital Card 1 -->
+                <div class="hospital-card" data-city="Mumbai" data-services="blood,emergency">
+                    <div class="hospital-header">
+                        <h3>City General Hospital</h3>
+                        <span class="distance">2.5 km away</span>
+                    </div>
+                    <div class="hospital-address">
+                        <p>Andheri West, Mumbai, Maharashtra</p>
+                    </div>
+                    <div class="hospital-services">
+                        <span class="service-tag blood-service">Blood Bank</span>
+                        <span class="service-tag emergency-service">Emergency</span>
+                    </div>
+                    <button class="btn btn-primary select-hospital-btn" onclick="selectHospital(this, 'City General Hospital')">Select Hospital</button>
+                </div>
+
+                <!-- Hospital Card 2 -->
+                <div class="hospital-card" data-city="Delhi" data-services="organ,blood,emergency">
+                    <div class="hospital-header">
+                        <h3>Metro Medical Center</h3>
+                        <span class="distance">3.2 km away</span>
+                    </div>
+                    <div class="hospital-address">
+                        <p>Connaught Place, Delhi</p>
+                    </div>
+                    <div class="hospital-services">
+                        <span class="service-tag blood-service">Blood Bank</span>
+                        <span class="service-tag organ-service">Organ Transplant</span>
+                        <span class="service-tag emergency-service">Emergency</span>
+                    </div>
+                    <button class="btn btn-primary select-hospital-btn" onclick="selectHospital(this, 'Metro Medical Center')">Select Hospital</button>
+                </div>
+
+                <!-- Hospital Card 3 -->
+                <div class="hospital-card" data-city="Bangalore" data-services="organ,emergency">
+                    <div class="hospital-header">
+                        <h3>Apollo Hospitals</h3>
+                        <span class="distance">4.1 km away</span>
+                    </div>
+                    <div class="hospital-address">
+                        <p>Jubilee Hills, Bangalore, Karnataka</p>
+                    </div>
+                    <div class="hospital-services">
+                        <span class="service-tag organ-service">Organ Transplant</span>
+                        <span class="service-tag emergency-service">Emergency</span>
+                    </div>
+                    <button class="btn btn-primary select-hospital-btn" onclick="selectHospital(this, 'Apollo Hospitals')">Select Hospital</button>
+                </div>
+
+                <!-- Hospital Card 4 -->
+                <div class="hospital-card" data-city="Chennai" data-services="blood,organ">
+                    <div class="hospital-header">
+                        <h3>CMC Hospital</h3>
+                        <span class="distance">5.8 km away</span>
+                    </div>
+                    <div class="hospital-address">
+                        <p>Vellore, Chennai, Tamil Nadu</p>
+                    </div>
+                    <div class="hospital-services">
+                        <span class="service-tag blood-service">Blood Bank</span>
+                        <span class="service-tag organ-service">Organ Transplant</span>
+                    </div>
+                    <button class="btn btn-primary select-hospital-btn" onclick="selectHospital(this, 'CMC Hospital')">Select Hospital</button>
+                </div>
+
+                <!-- Hospital Card 5 -->
+                <div class="hospital-card" data-city="Mumbai" data-services="emergency">
+                    <div class="hospital-header">
+                        <h3>Lilavati Hospital</h3>
+                        <span class="distance">6.3 km away</span>
+                    </div>
+                    <div class="hospital-address">
+                        <p>Bandera, Mumbai, Maharashtra</p>
+                    </div>
+                    <div class="hospital-services">
+                        <span class="service-tag emergency-service">Emergency</span>
+                    </div>
+                    <button class="btn btn-primary select-hospital-btn" onclick="selectHospital(this, 'Lilavati Hospital')">Select Hospital</button>
+                </div>
+            </div>
+
+            <div class="location-note">
+                <p><em>Hospitals are shown based on your location (simulated for now)</em></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Blood & Organ Donation System. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
